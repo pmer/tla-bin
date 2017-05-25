@@ -5,10 +5,10 @@ binaries for tlc, pcal, and sany.
 
 ## Installation
 
-```sh
-git clone https://github.com/pmer/tla-bin.git
-./download_or_update_tla.sh
-sudo ./install.sh
+```
+$ git clone https://github.com/pmer/tla-bin.git
+$ ./download_or_update_tla.sh
+$ sudo ./install.sh
 ```
 
 ## Usage
@@ -20,8 +20,8 @@ the process of running.
 
 `tlc` is the TLA+ model checker.
 
-```sh
-pcal Euclid.tla
-sany Euclid.tla
-tlc Euclid.tla
+```
+$ pcal Euclid.tla
+$ sany Euclid.tla
+$ tlc Euclid.tla
 ```
