@@ -1,0 +1,2 @@
+#!/bin/sh
+exec java -cp PREFIX/lib/tla.jar pcal.trans "$@"
