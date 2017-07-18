@@ -23,7 +23,7 @@ mkdir -p staging
 cp -r bin staging/bin
 
 # Modify the staged files so they use the $PREFIX
-sed -i '' -e s_PREFIX_"$PREFIX"_ staging/bin/*
+sed -i'' -e s_PREFIX_"$PREFIX"_ staging/bin/*
 
 # Install everything
 install -dv $PREFIX/lib
