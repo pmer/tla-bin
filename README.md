@@ -1,7 +1,8 @@
 # tla-bin
 
-A wrapper around https://github.com/tlaplus/tlaplus that provides command line
-binaries for pcal, tlc, and sany.
+tla-bin is a wrapper around https://github.com/tlaplus/tlaplus that provides
+command line binaries for pcal, tlc, and sany, making automation around TLA+
+easy.
 
 ## Installation
 
@@ -13,10 +14,7 @@ $ sudo ./install.sh
 
 ## Usage
 
-### pcal
-
-`pcal` runs the PlusCal → TLA+ translator on a TLA+ file. It edits the file in
-the process of running.
+### `pcal`, the PlusCal → TLA+ translator
 
 ```
 $ pcal Euclid.tla
@@ -28,9 +26,7 @@ New file Euclid.tla written.
 New file Euclid.cfg written.
 ```
 
-### tlc
-
-`tlc` is the TLA+ model checker.
+### `tlc`, the TLA+ model checker
 
 ```
 $ tlc Euclid.tla
@@ -61,9 +57,7 @@ The depth of the complete state graph search is 4.
 Finished in 05s at (2017-05-25 00:51:23)
 ```
 
-### sany
-
-`sany` is TLA+'s static analyzer.
+### `sany`, the TLA+ static analyzer
 
 ```
 $ sany Euclid.tla
