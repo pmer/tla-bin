@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Downloads the TLA+ binary image (tla.zip) from the Microsoft Research
+# Downloads the TLA+ binary image (tla2tools.jar) from the Microsoft Research
 # servers. If the file already exists locally, checks for an update & prints a
-# message if one was found. Converts the zip to a jar.
+# message if one was found.
 #
 
 download() {
@@ -16,60 +16,40 @@ download() {
 download_curl() {
 	local if_modified
 
-	if [ -e tla.zip ]; then 
-		if_modified="-z tla.zip"
+	if [ -e tla2tools.jar ]; then 
+		if_modified="-z tla2tools.jar"
 	fi
 
 	curl -f -Ss -R -O $if_modified "$1"
 
 	if [ $? -ne 0 ]; then
-		echo "Couldn't download tla.zip"
+		echo "Couldn't download tla2tools.jar"
 		exit 1
 	fi
-}
-
-make_jar() {
-	if [ ! -e tla.zip ]; then
-		echo "Couldn't find tla.zip"
-		exit 1
-	fi
-
-	rm -f tla.jar
-
-	# Take everything in the zip out of the tla/ directory.
-	unzip tla.zip >/dev/null
-	(cd tla; zip -r ../tla.jar * >/dev/null)
-
-	touch -r tla.zip tla.jar
-
-	rm -rf tla
 }
 
 print_version() {
-	java -cp "$1" tlc2.TLC | grep Version | cut -d' ' -f3
+	"$1" tlc2.TLC | grep Version | cut -d' ' -f3
 }
 
 main() {
-	echo "Downloading tla.zip..."
-	before=$(date -r tla.zip 2>/dev/null)
-	download https://tla.msr-inria.inria.fr/tlatoolbox/dist/tla.zip
-	after=$(date -r tla.zip 2>/dev/null)
+	echo "Downloading tla2tools.jar..."
+	before=$(date -r tla2tools.jar 2>/dev/null)
+	download https://tla.msr-inria.inria.fr/tlatoolbox/dist/tla2tools.jar
+	after=$(date -r tla2tools.jar 2>/dev/null)
 
-	if [ ! -e tla.zip ]; then
-		echo "Couldn't download tla.zip" >&2
+	if [ ! -e tla2tools.jar ]; then
+		echo "Couldn't download tla2tools.jar" >&2
 		exit 1
 	fi
 
 	if [ "$before" != "$after" ]; then
-		echo "Creating tla.jar..."
-		make_jar
-
 		if [ -n "$before" ]; then
-			echo "Updated tla.jar"
+			echo "Updated tla2tools.jar"
 			printf "New version: "
-			print_version tla.jar
+			print_version tla2tools.jar
 		else
-			echo "Created tla.jar"
+			echo "Created tla2tools.jar"
 		fi
 	else
 		echo "No updates"

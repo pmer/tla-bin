@@ -1,2 +1,2 @@
 #!/bin/sh
-exec java -cp PREFIX/lib/tla.jar pcal.trans "$@"
+exec java -cp PREFIX/lib/tla2tools.jar pcal.trans "$@"

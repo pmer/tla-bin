@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# Installs the TLA+ convenience binaries. Requires that tla.jar is downloaded
-# already.
+# Installs the TLA+ convenience binaries. Requires that tla2tools.jar is
+# downloaded already.
 #
 # Usage: sudo install.sh /usr/local
 # or     sudo install.sh /usr
@@ -27,7 +27,7 @@ sed -i'' -e s_PREFIX_"$PREFIX"_ staging/bin/*
 
 # Install everything
 install -dv $PREFIX/lib
-install -v tla.jar $PREFIX/lib
+install -v tla2tools.jar $PREFIX/lib
 
 install -dv $PREFIX/bin
 install -v staging/bin/* $PREFIX/bin
