@@ -77,3 +77,15 @@ Semantic processing of module Sequences
 Semantic processing of module TLC
 Semantic processing of module Euclid
 ```
+
+### `tlatex`, the TLA+ pretty printer
+
+```
+$ tlatex Euclid.tla
+tla2tex.TLA Version 1.0 created  12 Apr 2013
+looking for file: Euclid
+looking for file: Euclid.log
+looking for file: Euclid
+TLATeX dvi output written on Euclid.dvi.
+Total execution time: 0.56 seconds
+```
