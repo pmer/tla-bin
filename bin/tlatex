@@ -1,0 +1,2 @@
+#!/bin/sh
+exec java -cp PREFIX/lib/tla2tools.jar tla2tex.TLA "$@"
