@@ -1,0 +1,7 @@
+#!/bin/sh
+
+tmpfile=$(mktemp)
+
+echo "$@" > $tmpfile
+
+exec java -cp PREFIX/lib/tla2tools.jar tlc2.TraceExplorer -expressionsFile $tmpfile -replBis
