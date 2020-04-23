@@ -35,7 +35,7 @@ print_version() {
 main() {
 	echo "Downloading tla2tools.jar..."
 	before=$(date -r tla2tools.jar 2>/dev/null)
-	download https://tla.msr-inria.inria.fr/tlatoolbox/dist/tla2tools.jar
+	download https://nightly.tlapl.us/dist/tla2tools.jar
 	after=$(date -r tla2tools.jar 2>/dev/null)
 
 	if [ ! -e tla2tools.jar ]; then
