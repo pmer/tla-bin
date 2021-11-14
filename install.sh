@@ -5,6 +5,7 @@
 #
 # Usage: sudo install.sh /usr/local
 # or     sudo install.sh /usr
+# or     ./install.sh ~/.local
 #
 
 set -e

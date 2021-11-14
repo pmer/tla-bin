@@ -1,8 +1,8 @@
 # tla-bin
 
 tla-bin is a wrapper around https://github.com/tlaplus/tlaplus that provides
-command line binaries for pcal, tlc, and sany, making automation around TLA+
-easy.
+command line binaries for pcal, tlc, tlatex and sany, making automation around TLA+
+easy.  Also provides a binary that starts the TLA+ REPL.
 
 ## Installation
 
@@ -11,6 +11,9 @@ $ git clone https://github.com/pmer/tla-bin.git
 $ ./download_or_update_tla.sh
 $ sudo ./install.sh
 ```
+
+The `install.sh` scripts takes an optional location argument.  By default,
+binaries and the tla jar file are installed below `/usr/local`.
 
 ## Usage
 
@@ -88,4 +91,14 @@ looking for file: Euclid.log
 looking for file: Euclid
 TLATeX dvi output written on Euclid.dvi.
 Total execution time: 0.56 seconds
+```
+
+### `tlarepl`, the TLA+ REPL
+
+```
+$ tlarepl
+Welcome to the TLA+ REPL!
+TLC2 Version 2.16 of Day Month 20??
+Enter a constant-level TLA+ expression.
+(tla+)
 ```
