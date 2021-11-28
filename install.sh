@@ -24,7 +24,13 @@ mkdir -p staging
 cp -r bin staging/bin
 
 # Modify the staged files so they use the $PREFIX
-sed -i'' -e s_PREFIX_"$PREFIX"_ staging/bin/*
+if [ `uname -s` = Linux ]; then
+    # GNU sed
+    sed -i -e s_PREFIX_"$PREFIX"_ staging/bin/*
+else
+    # BSD sed
+    sed -i '' -e s_PREFIX_"$PREFIX"_ staging/bin/*
+fi
 
 # Install everything
 install -dv $PREFIX/lib
