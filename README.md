@@ -1,8 +1,8 @@
 # tla-bin
 
 tla-bin is a wrapper around https://github.com/tlaplus/tlaplus that provides
-command line binaries for pcal, tlc, tlatex and sany, making automation around TLA+
-easy.  Also provides a binary that starts the TLA+ REPL.
+command line binaries for pcal, tlc, tlatex and sany, making automation around
+TLA+ easy.  Also provides a binary that starts the TLA+ REPL.
 
 ## Installation
 
@@ -12,7 +12,11 @@ $ ./download_or_update_tla.sh
 $ sudo ./install.sh
 ```
 
-The `install.sh` scripts takes an optional location argument.  By default,
+The `download_or_update_tla.sh` script takes an optional `--nightly` argument.
+If passed, it will download the nightly CI build of TLA+ rather than the latest
+release.
+
+The `install.sh` script takes an optional location argument.  By default,
 binaries and the tla jar file are installed below `/usr/local`.
 
 ## Usage
@@ -101,6 +105,9 @@ Total execution time: 0.38 seconds
 ```
 
 ### `tlarepl`, the TLA+ REPL
+
+(Requires TLA+ version 1.8.0 or higher, which as of November 2021 is only
+found in nightly builds.)
 
 ```
 $ tlarepl

@@ -33,9 +33,16 @@ print_version() {
 }
 
 main() {
+	if [ "$1" = '--nightly' ]; then
+		echo nightly
+		url=https://tla.msr-inria.inria.fr/tlatoolbox/ci/dist/tla2tools.jar
+	else
+		url=https://tla.msr-inria.inria.fr/tlatoolbox/dist/tla2tools.jar
+	fi
+
 	echo "Downloading tla2tools.jar..."
 	before=$(date -r tla2tools.jar 2>/dev/null)
-	download https://tla.msr-inria.inria.fr/tlatoolbox/dist/tla2tools.jar
+	download "$url"
 	after=$(date -r tla2tools.jar 2>/dev/null)
 
 	if [ ! -e tla2tools.jar ]; then
@@ -56,4 +63,4 @@ main() {
 	fi
 }
 
-main
+main "$@"
