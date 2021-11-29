@@ -29,7 +29,7 @@ download_curl() {
 }
 
 print_version() {
-	"$1" tlc2.TLC | grep Version | cut -d' ' -f3
+	java -jar "$1" tlc2.TLC | grep Version | cut -d' ' -f3
 }
 
 main() {
