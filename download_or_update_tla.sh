@@ -20,7 +20,7 @@ download_curl() {
 		if_modified="-z tla2tools.jar"
 	fi
 
-	curl -f -Ss -R -O $if_modified "$1"
+	curl -L -f -Ss -R -O $if_modified "$1"
 
 	if [ $? -ne 0 ]; then
 		echo "Couldn't download tla2tools.jar"
@@ -37,7 +37,7 @@ main() {
 		echo nightly
 		url=https://tla.msr-inria.inria.fr/tlatoolbox/ci/dist/tla2tools.jar
 	else
-		url=https://tla.msr-inria.inria.fr/tlatoolbox/dist/tla2tools.jar
+		url=https://github.com/tlaplus/tlaplus/releases/latest/download/tla2tools.jar
 	fi
 
 	echo "Downloading tla2tools.jar..."
