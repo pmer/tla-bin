@@ -8,6 +8,7 @@ TLA+ easy.  Also provides a binary that starts the TLA+ REPL.
 
 ```
 $ git clone https://github.com/pmer/tla-bin.git
+$ cd tla-bin
 $ ./download_or_update_tla.sh
 $ sudo ./install.sh
 ```
