@@ -37,6 +37,7 @@ New file Euclid.cfg written.
 ### `tlc`, the TLA+ model checker
 
 ```
+$ tlc Euclid.tla
 TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
 Running breadth-first search Model-Checking with fp 70 and seed -2731419115466680819 with 1 worker on 2 cores with 444MB heap and 64MB offheap memory [pid: 1039] (Linux 4.19.0-18-amd64 amd64, Debian 11.0.12 x86_64, MSBDiskFPSet, DiskStateQueue).
 Parsing file /home/pdm/tla-bin/tla/MC.tla
